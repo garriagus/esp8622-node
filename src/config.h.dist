@@ -1,0 +1,18 @@
+// config.h.dist
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#include <Arduino.h>
+
+#define MAXRETRY 5 // Max attempts to acquire temperature and humidity data
+#define DHTPIN D4  // DHT sensor pin
+#define DHTTYPE DHT22 // DHT sensor type DHT11 | DHT22 | DHT21 | AM2301
+
+// Deja estos valores vacíos para que el usuario los configure en el archivo real
+const char* ssid = "";
+const char* password = "";
+const char* mqtt_server = "";
+uint16_t mqtt_port = 1883;
+String mqtt_topic = String("esp/") + String(ESP.getChipId());
+
+#endif // CONFIG_H
